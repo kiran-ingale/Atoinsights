@@ -1,0 +1,28 @@
+from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+
+from .agent_service import run_analysis
+from .upload import upload_dataset
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.post("/analyze")
+async def analyze(data: dict):
+    return await run_analysis(data)
+
+
+@app.post("/upload")
+async def upload(file: UploadFile = File(...)):
+    return await upload_dataset(file)

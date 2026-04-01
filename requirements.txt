@@ -1,0 +1,9 @@
+adk>=1.18.0
+fastapi
+python-dotenv
+python-multipart
+pandas
+numpy
+scipy
+pytest
+uvicorn

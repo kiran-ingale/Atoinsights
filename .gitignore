@@ -1,0 +1,14 @@
+# Secrets
+.env
+*.env
+.env.*
+**/.env
+**/*.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Local uploads and logs
+Backend/uploads/
+.codex-logs/
