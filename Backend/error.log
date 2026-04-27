@@ -1,0 +1,507 @@
+
+--- Error at 2026-04-26 11:45:32.119973 ---
+Query: Give me a quick profile of this dataset.
+Error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 443, in _run_one_step_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 545, in _postprocess_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 704, in _postprocess_handle_function_calls_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 212, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+------------------------------
+
+--- Error at 2026-04-26 11:46:01.982796 ---
+Query: Show trends and outliers with visuals.
+Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 57.214387463s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 443, in _run_one_step_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 545, in _postprocess_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 704, in _postprocess_handle_function_calls_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 210, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 57.214387463s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+------------------------------
+
+--- Error at 2026-04-26 11:48:03.988429 ---
+Query: Show trends and outliers with visuals.
+Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.275678994s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 210, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.275678994s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+------------------------------
+
+--- Error at 2026-04-26 11:48:32.537216 ---
+Query: Give me a quick profile of this dataset.
+Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 26.810170213s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 210, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 26.810170213s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}
+------------------------------
+
+--- Error at 2026-04-26 11:49:37.458002 ---
+Query: Give me a quick profile of this dataset.
+Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\nPlease retry in 21.773560287s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerDay-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 210, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\nPlease retry in 21.773560287s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerDay-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}
+------------------------------
+
+--- Error at 2026-04-26 11:50:27.029703 ---
+Query: Give me a quick profile of this dataset.
+Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\nPlease retry in 32.217639964s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerDay-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 131, in run_analysis
+    await execute_runner()
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 120, in execute_runner
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=prompt_content):
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 443, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 427, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 653, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\runners.py", line 416, in execute
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\base_agent.py", line 294, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\agents\llm_agent.py", line 435, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 804, in _call_llm_async
+    async for event in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 788, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 998, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 982, in _run_and_handle_error
+    async for response in agen:
+  File "C:\Users\user\Desktop\Lib\site-packages\google\adk\models\google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 7021, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\models.py", line 5839, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1376, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1309, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\user\Desktop\Lib\site-packages\tenacity\asyncio\__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\_api_client.py", line 1289, in _async_request_once
+    await errors.APIError.raise_for_async_response(client_response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 188, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\user\Desktop\Lib\site-packages\google\genai\errors.py", line 210, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\nPlease retry in 32.217639964s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerDay-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}
+------------------------------
+
+--- Error at 2026-04-26 12:01:51.898732 ---
+Query: Show me a box plot of the outliers in the raisedhands column." or "Can you show me a scatter plot of the relationship between raisedhands and visitedresources?
+Error: cannot import name 'FunctionResponse' from 'google.adk.events' (C:\Users\user\Desktop\Lib\site-packages\google\adk\events\__init__.py)
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\adk_env\Autoinsights\Backend\agent_service.py", line 118, in run_analysis
+    from google.adk.events import FunctionResponse
+ImportError: cannot import name 'FunctionResponse' from 'google.adk.events' (C:\Users\user\Desktop\Lib\site-packages\google\adk\events\__init__.py)
+------------------------------
