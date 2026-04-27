@@ -1,4 +1,4 @@
-adk>=1.18.0
+google-adk
 fastapi
 python-dotenv
 python-multipart
